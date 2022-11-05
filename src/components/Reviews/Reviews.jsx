@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
 import { movieReviewsRequest } from 'components/MoviesRequest/MoviesRequest';
 
-const Reviews = ({ id }) => {
+const Reviews = () => {
   const [movieReviews, setMovieReviews] = useState(null);
   const { movieId } = useParams();
-  id = movieId;
 
   useEffect(() => {
     (async () => {
@@ -40,7 +38,3 @@ const Reviews = ({ id }) => {
 };
 
 export default Reviews;
-
-Reviews.propTypes = {
-  id: PropTypes.string.isRequired,
-};

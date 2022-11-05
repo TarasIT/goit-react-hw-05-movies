@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
 import { movieCastRequest } from 'components/MoviesRequest/MoviesRequest';
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w200';
 
-const Cast = ({ id }) => {
+const Cast = () => {
   const [movieCast, setMovieCast] = useState(null);
   const { movieId } = useParams();
-  id = movieId;
 
   useEffect(() => {
     (async () => {
@@ -39,7 +37,3 @@ const Cast = ({ id }) => {
 };
 
 export default Cast;
-
-Cast.propTypes = {
-  id: PropTypes.string.isRequired,
-};
